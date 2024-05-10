@@ -1,20 +1,14 @@
-# ed25519
-
-[![Package Version](https://img.shields.io/hexpm/v/ed25519)](https://hex.pm/packages/ed25519)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/ed25519/)
-
-```sh
-gleam add ed25519
-```
+# ed25519-gleam
 ```gleam
 import ed25519
 
 pub fn main() {
-  // TODO: An example of the project in use
+  let assert #(private_key, public_key) = ed25519.generate_key()
+  let message = <<"Hello":utf8>>
+  let signature = ed25519.sign(message, public_key, private_key)
+  ed25519.verify(message, signature, public_key) |> should.be_true()
 }
 ```
-
-Further documentation can be found at <https://hexdocs.pm/ed25519>.
 
 ## Development
 
