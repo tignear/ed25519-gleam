@@ -16,7 +16,3 @@ pub fn sign(
 
 @external(erlang, "ed25519_shim", "generate_key")
 pub fn generate_key() -> #(BitArray, BitArray)
-
-pub fn main() {
-  io.println("Hello from ed25519!")
-}
