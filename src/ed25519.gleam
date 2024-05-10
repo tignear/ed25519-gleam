@@ -1,5 +1,3 @@
-import gleam/io
-
 @external(erlang, "ed25519_shim", "verify")
 pub fn verify(
   message: BitArray,
